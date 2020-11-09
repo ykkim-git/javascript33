@@ -115,6 +115,7 @@ console.log(thing) // 'something else'
   */
   function prepareCake (flavor) {
     return function () {
+      debugger // 클로져 내 디버깅
       setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);  
     }
   }
