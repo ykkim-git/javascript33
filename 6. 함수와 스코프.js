@@ -76,6 +76,26 @@ console.log(thing) // 'something else'
   }
   // second();
 
+/* 예시 */
+var sum = 5;
+sum = sum + i;
+function sumAllNumbers() {
+    // ...
+}
+var i = 10;
+
+/* js 해석기에 따른 순서 재조정 결과 */
+// #1 - 함수 선언식과 변수 선언을 hoisting
+var sum;
+function sumAllNumbers() {
+    // ...
+}
+var i;
+// #2 - 변수 대입 및 할당
+sum = 5;
+sum = sum + i;
+i = 10;
+
 
   /**
    * 3. 내부 스코프
@@ -115,7 +135,7 @@ console.log(thing) // 'something else'
   */
   function prepareCake (flavor) {
     return function () {
-      debugger // 클로져 내 디버깅
+      // debugger // 클로져 내 디버깅
       setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);  
     }
   }
@@ -155,3 +175,24 @@ console.log(thing) // 'something else'
   }
   
   const makeCakeLater2 = prepareCake2('banana!');
+
+  // 4-3-1. 클로저 간단 예제
+  function counter() {
+    let count = 0;
+
+    function add() {
+      count++;
+      console.log(`count : ${count}`);
+    }
+    return add;
+  }
+  const increaseNum = counter(); 
+  // counter(); // function add()
+  increaseNum();
+
+  /**
+   * counter 함수를 실행 함으로써 add 함수가 반환되는데 
+   중요한 점은 counter 함수가 실행 된 후에도 
+   반환된 내부 함수를 통해 count 변수에 접근이 가능 하다는 것이다. 
+   즉, count 변수와 반환된 함수를 포함하는독립된 환경이 생성된 것이다.
+   */
