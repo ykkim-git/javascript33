@@ -189,7 +189,9 @@ i = 10;
   const increaseNum = counter(); 
   // counter(); // function add()
   increaseNum();
-
+  // increaseNum은 counter()에서 리턴한 add 함수를 통째로 할당한거라서
+  // 아직 실행이 되지않아서 increaeNum() 을 실행시켜 줘야함.
+  
   /**
    * counter 함수를 실행 함으로써 add 함수가 반환되는데 
    중요한 점은 counter 함수가 실행 된 후에도 
