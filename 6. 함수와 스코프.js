@@ -198,3 +198,9 @@ i = 10;
    반환된 내부 함수를 통해 count 변수에 접근이 가능 하다는 것이다. 
    즉, count 변수와 반환된 함수를 포함하는독립된 환경이 생성된 것이다.
    */
+
+   if (true) {
+     const hello = 'hi!'
+     console.log(hello);
+   }
+   console.log(hello);
