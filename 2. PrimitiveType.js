@@ -16,9 +16,44 @@ undefined instanceof Object; // false -> undefined
 0 instanceof Object; // false -> number
 'bar' instanceof Object // false -> string
 
+
+let x = 10;
+let y = 'abc';
+
+/**
+ * 새로운 변수에 값을 복사
+ */
+let a = x; 
+let b = y;
+
+/**
+ * a, b는 복사된 값이라서 x,y를 수정해도 값에 영향이 없음
+ */
+x = 20;
+y = 'def';
+console.log(a); // 10
+console.log(b); // 'def'
+
+/////////////////////////////////////////////
+
 // Non-primitive types
 // const foo = function () {}
 // foo instanceof Object; // true -> function;
+
+let obj1 = {
+  first: 'this is first'
+}
+
+obj1 = {
+  second: 'this is second !'
+}
+console.log(obj1); // { second: 'this is second !' }
+
+/**
+ * 위 코드처럼 남아있는 객체를 가리키는 참조가 남아있지 않을 때
+ * js엔진은 가비지 컬렉션을 동작시킨다. (그 주소로 사용되지 않는 객체를 메모리로부터 안전하게 삭제)
+ */
+
 
 /**
  * 원시타입에는 어떠한 메소드도 붙지 않는다.
@@ -49,7 +84,34 @@ undefined instanceof Object; // false -> undefined
   // 일반적인 객체와 같이 함수에 새로운 프로퍼티 추가 가능
   foo.bar = 'baz';
   foo.bar // baz
+ */
 
+ /**
+  * test
+  */
+
+ function changeAgeAndReference(person) {
+	person.age = 25;
+	person = {
+		name: 'John',
+		age: 50
+    };
+	return person;
+}
+
+var personObj1 = {
+	name: 'Alex',
+	age: 30
+};
+
+var personObj2 = changeAgeAndReference(personObj1);
+
+console.log(personObj1); // { name: 'Alex', age: 25, }
+console.log(personObj2); // -> { name: 'John', age: 50 } 
+
+/**
+ * 함수는 처음에 넘겨진 원본 객체의 프로퍼티 age를 변경한다.
+ * 그 후에 변수값에 새로운 객체를 다시 할당한다.
  */
 
 /**
@@ -127,6 +189,8 @@ typeof String('dog') // 'string'
 const pet = new String('dog');
 pet.constructor === String; // true
 String('dob').constructor === String;
+
+
 
 /**
  * 요약
