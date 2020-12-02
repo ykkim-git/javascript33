@@ -6,7 +6,24 @@
   <title>JAVASCRIPT 33!</title>
 </head>
 <body>
-  <!-- 
+  <!--
+    @ script태그 위치
+    <head>
+      <script>
+        js
+      </script>
+    </head>
+    DOM이 해석되는 중에 스크립트를 읽기 때문에
+    장시간 완성되지 못한 화면이 노출될 수 있다. (가벼운 스크립트 권장)
+
+      <script>
+        js
+      </script>
+    </body >
+    브라우저 렌더링이 완료된 상태에서 스크립트가 실행되기 때문에
+    화면이 다 노출되고 스크립트를 읽는다.
+  
+  
     script에서 태그에서 async, defer
     async: 
     브라우저가 페이지를 파싱하는 동안에도 스크립트가 실행된다.
@@ -17,6 +34,7 @@
     nothing: 
     브라우저가 페이지를 파싱하기 전에 스크립트를 가져와서 바로실행
   -->
+
   <!-- <script defer src="1. callstack.js"></script> -->
   <!-- <script defer src="2. PrimitiveType.js"></script> -->
   <!-- <script defer src="3. Value Types & Reference Types.js"></script> -->
@@ -29,6 +47,7 @@
   <!-- <script defer src="10. setTimeout & setInterval.js"></script> -->
   <!-- <script defer src="11. V8엔진이 js를 기계코드로 바꾸는법.js"></script> -->
   <!-- <script defer src="12. 비트연산자.js"></script> -->
-  <script defer src="13. DOM이해하기.js"></script>
+  <!-- <script defer src="13. DOM이해하기.js"></script> -->
+  <script defer src="14. 클래스의 내면.js"></script>
 </body>
 </html>
