@@ -23,13 +23,14 @@
  var kim = new Person();
  var park = new Person();
 
+ console.log('kim without prototype : ', kim);
  console.log(kim.eyes); // 2
  console.log(kim.nose); // 1
 
  console.log(park.eyes); // 2
  console.log(park.nose); // 1
 
- console.log('kim : ', kim);
+ console.log('------------');
  console.log('------------');
 
  /**
@@ -47,7 +48,12 @@
   var choi = new Person2();
   var lee = new Person2();
 
-  console.log('choi: ', choi);
+  console.log('choi with prototype: ', choi);
+  // choi가 갖고있는(모든 객체가 갖고있는) __proto__ 속성 때문에 
+  // choi.eyes가 가능한 것
+  // __proto__속성은 객체가 생성될 때 조상이었던 함수의 Prototype Object를 가리키기 때문
+  // 즉 choi객체는 Person2 함수로부터 생성되었으니 Person2의 Prototype Object를 가리키는 것
+
   console.log(choi.eyes); // 2
   console.log(choi.nose); // 1
 
