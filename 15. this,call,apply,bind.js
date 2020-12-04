@@ -196,3 +196,4 @@ console.log(park);
 
 // this가 park이라는 변수를 호출하며
 // park은 새로운 객체가 할당된다.
+
