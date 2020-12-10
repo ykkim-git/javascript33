@@ -16,7 +16,6 @@ console.log(user);
  async가 붙은 함수안에서만 사용가능
  */
 function delay(ms) {
-  
   return new Promise((resolve) => {
     setTimeout(resolve, ms)
   });
